@@ -12,7 +12,7 @@ describe "User flow" do
   describe "Signed in" do
 
     describe "successfully" do
-      it "the username or email address indicates user is logged in" do
+      it "redirects to user#show view and displays user attributes" do
         visit root_path
 
         within '.user-info' do
@@ -26,7 +26,8 @@ describe "User flow" do
           click_button 'Sign in'
         end
 
-        expect(page).to have_content(@user.username || @user.email)
+        expect(current_url) == '/users/:id'
+        expect(page).to have_content(@user.username)
       end
     end
   end

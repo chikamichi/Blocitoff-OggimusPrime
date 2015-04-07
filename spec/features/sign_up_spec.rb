@@ -7,12 +7,15 @@ describe "Sign up flow" do
   end
 
   describe "confirmable" do
-
-    it "sends confirmation email when user signs up" do
+    before do
+      fill_in 'Username', with: 'example'
       fill_in 'Email', with: 'user@example.com'
       fill_in 'Password', with: 'helloworld'
       fill_in 'Password confirmation', with: 'helloworld'
       click_button 'Sign up'
+    end
+
+    it "sends confirmation email when user signs up" do
       user = User.last
       expect(user.confirmation_sent_at).to be <= Time.new 
     end
@@ -23,7 +26,8 @@ describe "Sign up flow" do
       @user = create(:user)
     end
 
-    it "invlid email" do
+    it "invalid email" do
+      fill_in 'Username', with: 'example'
       fill_in 'Email', with: 'user.example.com'
       fill_in 'Password', with: 'helloworld'
       fill_in 'Password confirmation', with: 'helloworld'
@@ -32,6 +36,7 @@ describe "Sign up flow" do
     end
 
     it "doesn't allow sign up with duplicate email" do
+      fill_in 'Username', with: 'example'
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: 'helloworld'
       fill_in 'Password confirmation', with: 'helloworld'
