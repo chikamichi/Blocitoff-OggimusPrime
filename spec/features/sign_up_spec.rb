@@ -9,6 +9,7 @@ describe "Sign up flow" do
   describe "confirmable" do
 
     it "sends confirmation email when user signs up" do
+      fill_in 'Username', with: 'example'
       fill_in 'Email', with: 'user@example.com'
       fill_in 'Password', with: 'helloworld'
       fill_in 'Password confirmation', with: 'helloworld'
