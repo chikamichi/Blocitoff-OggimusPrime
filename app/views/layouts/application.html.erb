@@ -9,8 +9,9 @@
 </head>
 <body>
   <div class="container">
-    <ul class="nav nav-tabs">
-      <li><%= link_to "Home", welcome_index_path %></li>
+    <div class="page-header">
+    <!-- <ul class="nav nav-tabs">
+      <li><%= link_to "Home", welcome_index_path %></li> -->
 
       <div class="pull-right user-info">
 
@@ -24,12 +25,13 @@
             <span class="glyphicon glyphicon-log-out"></span>
           <% end %>
         <% else %>
-          <%= link_to "Sign In", new_user_session_path %> or
-          <%= link_to "Sign Up", new_user_registration_path %>
+          <%= render partial: 'devise/sessions/new' %>
         <% end %>
 
       </div>
-    </ul>
+      <h2>Blocitoff</h2>
+    </div>
+    <!-- </ul> -->
 
     <% if flash[:notice] %>
       <div class="alert alert-success">
@@ -47,10 +49,11 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-  </div>
+    <div class="row">
 
-    <%= yield %>
+      <%= yield %>
 
+    </div>
   </div>
 </body>
 </html>

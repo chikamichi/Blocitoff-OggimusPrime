@@ -16,6 +16,24 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+  @media (min-width: 464px) {
+    .sign-up {
+        width: 66%;
+    }
+ }
+
+  @media (min-width: 668px) {
+    .sign-up {
+        width: 40%;
+    }
+ }
+
+   @media (min-width: 992px) {
+    .sign-up {
+        width: 33.33333333%;
+    }
+ }
+
  .nav {
     margin-top: 5px;
  }
@@ -32,10 +50,23 @@
  }
 
  .user-info {
-    margin-top: 8px;
+    margin-top: 3px;
  }
 
- .no-col-padding {
-  padding-right: 0;
-  padding-left: 0;
+ .no-col-pad {
+    padding-right: 0;
+    padding-left: 0;
  }
+
+ .marg-top {
+    margin-top: 20px;
+ }
+
+ .page-header {
+    margin: 20px 0;
+ }
+
+ // .page-content {
+ //    margin-top: 20px;
+ // }
+
