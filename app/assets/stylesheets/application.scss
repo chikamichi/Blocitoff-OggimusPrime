@@ -16,21 +16,61 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .nav {
-    margin-top: 5px;
+  @media (min-width: 464px) {
+    .sign-up {
+        width: 66%;
+    }
  }
 
- .center {
-    display: block;
-    float: none;
-    text-align: center;
-    position: absolute;
-    top: 25%;
-    left: 0;
-    right: 0;
-    margin: auto;
+  @media (min-width: 668px) {
+    .sign-up {
+        width: 40%;
+    }
  }
+
+   @media (min-width: 992px) {
+    .sign-up {
+        width: 33.33333333%;
+    }
+ }
+
+ // .nav {
+ //    margin-top: 5px;
+ // }
+
+ // .center {
+ //    display: block;
+ //    float: none;
+ //    text-align: center;
+ //    position: absolute;
+ //    top: 25%;
+ //    left: 0;
+ //    right: 0;
+ //    margin: auto;
+ // }
 
  .user-info {
-    margin-top: 8px;
+    margin-top: 3px;
  }
+
+ .no-col-pad {
+    padding-right: 0;
+    padding-left: 0;
+ }
+
+ .marg-top {
+    margin-top: 20px;
+ }
+
+ .page-header {
+    margin: 20px 0 0;
+ }
+
+ .main-content {
+    margin-top: 20px;
+ }
+
+ // .page-content {
+ //    margin-top: 20px;
+ // }
+
