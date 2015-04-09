@@ -10,8 +10,6 @@
 <body>
   <div class="container">
     <div class="page-header">
-    <!-- <ul class="nav nav-tabs">
-      <li><%= link_to "Home", welcome_index_path %></li> -->
 
       <div class="pull-right user-info">
 
@@ -31,7 +29,6 @@
       </div>
       <h2>Blocitoff</h2>
     </div>
-    <!-- </ul> -->
 
     <% if flash[:notice] %>
       <div class="alert alert-success">
@@ -49,7 +46,7 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-    <div class="row">
+    <div class="row main-content">
 
       <%= yield %>
 

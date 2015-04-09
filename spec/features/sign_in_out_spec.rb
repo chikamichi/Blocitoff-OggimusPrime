@@ -15,10 +15,6 @@ describe "User flow" do
       it "redirects to user#show view and displays user attributes" do
         visit root_path
 
-        # within '.user-info' do
-    
-        # end
-
         within '.user-info' do
           fill_in 'Login', with: @user.email
           fill_in 'Password', with: @user.password

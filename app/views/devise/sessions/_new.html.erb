@@ -1,7 +1,6 @@
-<div class="form-inline hidden-xs">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
-
+<div class="form-inline hidden-xs">
     <div class="form-group">
       <%= f.label :login, class: 'sr-only' %>
       <%= f.text_field :login, class: 'form-control', placeholder: "Email or username" %>
@@ -20,5 +19,8 @@
     </div>
       <%= f.submit "Sign in", class: 'btn btn-default' %>
   <% end %>
+</div>
+<div class="visible-xs">
+  <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-default" %>
 </div>
 
