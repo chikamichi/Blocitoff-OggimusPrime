@@ -15,14 +15,13 @@ describe "User flow" do
       it "redirects to user#show view and displays user attributes" do
         visit root_path
 
+        # within '.user-info' do
+    
+        # end
+
         within '.user-info' do
-          click_link "Sign In"
-        end
-
-        fill_in 'Login', with: @user.email
-        fill_in 'Password', with: @user.password
-
-        within 'form' do
+          fill_in 'Login', with: @user.email
+          fill_in 'Password', with: @user.password
           click_button 'Sign in'
         end
 
@@ -43,7 +42,7 @@ describe "User flow" do
           page.find(:xpath, "//a[@href='/users/sign_out']").click
         end
 
-        expect(page).to have_content("Sign In")
+        expect(page).to have_content("Signed out successfully.")
       end
     end
   end
