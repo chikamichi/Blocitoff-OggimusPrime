@@ -1,5 +1,9 @@
-<div class="col-md-12">
-  <div class="media">
-    <h2 class="media-heading"><%= @user.username %></h2>
-  </div>      
+<div class="col-md-8">
+  <h2 class="media-heading"><%= @user.username %></h2>
+  <%= render partial: 'lists/index' %>   
 </div>
+<div class="col-md-4">
+  <%= link_to "Create List", new_user_list_path(@user), class: 'btn btn-default' %>
+</div>
+
+

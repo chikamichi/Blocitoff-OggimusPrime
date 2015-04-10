@@ -1,9 +1,10 @@
 class ListsController < ApplicationController
-  # def index
-  #   @lists = List.all
-  #   authorize @list
-  # end
   before_action :authenticate_user!
+
+  def index
+    @lists = current_user.lists
+    authorize @lists
+  end
 
   def new
     @list = List.new
@@ -11,12 +12,13 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(params[:id])
+    # @user = User.find(params[:id])
+    @list = List.new(list_params)
     @list.user = current_user
 
     authorize @list
     if @list.save
-      redirect_to list_path(@list), notice: "List was saved."
+      redirect_to [@list.user, @list], notice: "List was saved."
     else
       flash[:error] = "Error creating list. Please try again."
       render :new
@@ -24,6 +26,7 @@ class ListsController < ApplicationController
   end 
 
   def show
+    @list = List.find(params[:id])
   end
 
   def edit
