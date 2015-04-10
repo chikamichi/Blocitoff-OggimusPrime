@@ -8,9 +8,9 @@ Blocitoff::Application.routes.draw do
     end
   end
 
-  authenticated :user do
-    root to: 'users#show', as: :authenticated_root
-  end
+  # authenticated :user do
+  #   root to: 'users#show', as: :authenticated_root
+  # end
 
   get 'welcome/index'
 

@@ -10,7 +10,9 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(params.require(:list).permit(:title, :description))
+    @user = User.find(params[:user_id])
+    @list = current_user.lists.build(user: @user)
+    # @list = List.new(params.require(:list).permit(:title, :description))
     authorize @list
     if @list.save
       redirect_to @list, notice: "List was created."
