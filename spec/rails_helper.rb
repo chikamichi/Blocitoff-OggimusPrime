@@ -49,4 +49,8 @@ RSpec.configure do |config|
 
   # Make Factory Girl's methods available
   config.include FactoryGirl::Syntax::Methods 
+
+  RSpec.configure do |config|
+  config.include Devise::TestHelpers, type: :controller
+end
 end
