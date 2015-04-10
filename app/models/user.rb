@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   #Ensure user provides username at signup       
   validates :username, :presence => true, :uniqueness => { :case_sensitive => false }
 
+  has_many :lists
+
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login

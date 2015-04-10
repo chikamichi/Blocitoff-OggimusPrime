@@ -1,9 +1,14 @@
 Blocitoff::Application.routes.draw do
-  # get 'users/show'
+
+  get 'items/new'
 
   devise_for :users
 
-  resources :users, only: [:update, :show]
+  resources :users, only: [:update, :show] do
+    resources :lists do
+      resources :items
+    end
+  end
 
   authenticated :user do
     root to: 'users#show', as: :authenticated_root
