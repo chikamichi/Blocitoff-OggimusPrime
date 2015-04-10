@@ -1,14 +1,17 @@
 class ListsController < ApplicationController
-  def index
-    @lists = List.all
-  end
+  # def index
+  #   @lists = List.all
+  #   authorize @list
+  # end
 
   def new
     @list = List.new
+    authorize @list
   end
 
   def create
     @list = List.new(params.require(:list).permit(:title, :description))
+    authorize @list
     if @list.save
       redirect_to @list, notice: "List was created."
     else
