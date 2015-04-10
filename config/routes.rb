@@ -1,10 +1,8 @@
 Blocitoff::Application.routes.draw do
 
-  get 'items/new'
-
   devise_for :users
 
-  resources :users, only: [:update, :show] do
+  resources :users, only: [:show, :update] do
     resources :lists do
       resources :items
     end
