@@ -6,13 +6,18 @@ class ListsController < ApplicationController
     authorize @lists
   end
 
+  def show
+    # @user = User.find(params[:id])
+    @list = List.find(params[:id])
+    @items = @list.items
+  end
+
   def new
     @list = List.new
     authorize @list
   end
 
   def create
-    # @user = User.find(params[:id])
     @list = List.new(list_params)
     @list.user = current_user
 
@@ -24,10 +29,6 @@ class ListsController < ApplicationController
       render :new
     end
   end 
-
-  def show
-    @list = List.find(params[:id])
-  end
 
   def edit
   end

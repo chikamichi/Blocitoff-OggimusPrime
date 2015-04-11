@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe ListsController, type: :controller do
 
+  before do
+    @user = create(:user)
+  end
+
   # describe "GET #index" do
   #   it "returns http success" do
   #     get :index
@@ -11,7 +15,7 @@ RSpec.describe ListsController, type: :controller do
 
   # describe "GET #new" do
   #   it "returns http success" do
-  #     get :new
+  #     get :new, :user_id => @user
   #     expect(response).to have_http_status(:success)
   #   end
   # end
@@ -29,14 +33,11 @@ RSpec.describe ListsController, type: :controller do
   #     expect(response).to have_http_status(:success)
   #   end
   # end
-  before do
-    @user = create(:user)
-  end
 
   describe "POST #create" do
     it "returns http success" do
-      post :create, user_id: @user 
-      expect(response).to have_http_status(:success)
+      post :create, :user_id => @user 
+      expect(response).to be_redirect
     end
   end
 
