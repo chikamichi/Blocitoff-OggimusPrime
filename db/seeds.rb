@@ -30,6 +30,15 @@ puts "5 users created"
     )
 end
 puts "15 lists created"
+lists = List.all
+
+50.times do
+  item = Item.create!(
+    list: lists.sample,
+    name: Faker::Lorem.sentence
+    )
+end
+puts "50 items created"
 
 puts "Seed finished"
 

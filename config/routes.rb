@@ -2,10 +2,10 @@ Blocitoff::Application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:show, :update] do
-    resources :lists do
-      resources :items
-    end
+  resources :users, only: [:show, :update]
+
+  resources :lists do
+      resources :items, except: [:index, :show]
   end
 
   # authenticated :user do

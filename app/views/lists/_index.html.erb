@@ -1,9 +1,9 @@
 <% @lists.each do |list| %>
-    <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= link_to list.title, [list.user, list]%>
-        </h4>
-      </div>
-    </div>  
-  <% end %> 
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to list.title, [list.user, list]%>
+      </h4>
+    </div>
+  </div>  
+<% end %> 

@@ -1,2 +1,13 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<div class="col-md-8">
+  <div class="row">
+    <h1><%= @list.title %></h1>
+    <small><strong>Important: Items not completed in 7 days will expire and be removed from the To-Do List.</strong></small><br />
+  </div>
+  <div class="row">
+    <%= render partial: 'items/item' %> 
+  </div>
+</div>
+<div class="col-md-4">
+  <%= render partial: 'items/form', locals: { list: @list } %>
+</div>
+
