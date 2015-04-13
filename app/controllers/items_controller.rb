@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  # respond_to :html
+
   def new
     @list = List.find(params[:list_id])
     @item = Item.new
@@ -16,6 +18,25 @@ class ItemsController < ApplicationController
     else
       flash[:error] = "Error creating item. Please try again."
       render :new
+    end
+  end
+
+  def destroy
+    @list = List.find(params[:list_id])
+    @item = Item.find(params[:id])
+
+    authorize @item
+
+    if @item.destroy
+      flash[:notice] = "Task Completed."
+      # redirect_to @list
+    else
+      flash[:error] = "Task couldn't be deleted. Try again."
+    end
+
+    respond_to do |format|
+      format.html
+      format.js 
     end
   end
 end
