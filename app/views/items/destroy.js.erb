@@ -1,10 +1,5 @@
 <% if @item.destroyed? %>
-  $('#item-' +<%= @item.id %>).hide();
-  // $('#item-' +<%= @item.id %>).closest('li');
-  // self.closest('li').remove();
-  // $('li#item-<%= @item.id %>').hide();
-  // $('#item-' +<%= @item.id %>).parent().remove();
-  // $("li").remove('li#item-<%= @item.id %>');
+  $('li#item-' + <%= @item.id %>).hide();
 <% else %>
   $('#item-' +<%= @item.id %>).prepend("<div class='alert alert-danger'><%= flash[:error] %></div>");
 <% end %>
