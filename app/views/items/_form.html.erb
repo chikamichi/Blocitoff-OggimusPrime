@@ -1,5 +1,5 @@
 <h3>Add Item to To-Do List</h3>
-<%= form_for @list.items.build, url: list_items_path(@list) do |f| %>
+<%= form_for [@list, @list.items.build] do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control', placeholder: "Name" %>

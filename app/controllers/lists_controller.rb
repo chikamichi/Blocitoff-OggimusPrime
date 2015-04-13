@@ -7,11 +7,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
-    # @list_id = List.find(params[:id])
     @list = List.find(params[:id])
-    # @item = Item.find(params[:id]).list
-    # @items = @list.items
   end
 
   def new

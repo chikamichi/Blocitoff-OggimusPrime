@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # , except: [:show]
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user # || User.find(params[:id])
     @lists = current_user.lists
   end
 
