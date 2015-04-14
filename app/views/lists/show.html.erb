@@ -1,8 +1,8 @@
 <div class="col-md-8">
   <div class="row">
     <h1><%= @list.title %></h1>
-    <%= link_to "", @list, method: :delete, class: 'glyphicon glyphicon-remove' %>
-    <small><%= @list.description %></small><br />
+    <%= @list.description %><br />
+    <%= link_to "Delete To-Do List", @list, method: :delete %><br />
     <small><strong>Important: Items not completed in 7 days will expire and be removed from the To-Do List.</strong></small><br />
   </div>
   <div class="row">

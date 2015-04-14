@@ -1,9 +1,9 @@
 <div class="col-md-8">
-  <h2 class="media-heading"><%= @user.username %></h2>
+  <h2 class="media-heading"><%= @user.username %>'s To-Do Lists:</h2>
   <%= render partial: 'lists/list' %>   
 </div>
 <div class="col-md-4">
-  <%= link_to "Create List", new_list_path, class: 'btn btn-default' %>
+  <%= link_to "Create List", new_list_path, class: 'btn btn-primary' %>
 </div>
 
 
