@@ -1,7 +1,8 @@
 <ul class="list-group">
   <% @list.items.each do |item| %>
-      <li class="list-group-item">
+      <li id="item-<%= item.id %>" class="list-group-item">
         <%= item.name %>
+        <%= link_to "", [item.list, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
       </li> 
   <% end %>
 </ul> 
