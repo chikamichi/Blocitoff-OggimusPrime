@@ -32,6 +32,21 @@ class ListsController < ApplicationController
   def edit
   end
 
+  def destroy
+    @list = List.find(params[:id])
+    title = @list.title
+
+    authorize @list
+
+    if @list.destroy
+      flash[:notice] = "\"#{title}\" was deleted successfully."
+      redirect_to authenticated_root_path
+    else
+      flash[:error] = "There was an error deleting the list."
+      render :show
+    end
+  end
+
   def list_params
     params.require(:list).permit(:title, :description)
   end
