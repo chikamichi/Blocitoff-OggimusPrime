@@ -1,8 +1,9 @@
 <ul class="list-group">
   <% @list.items.each do |item| %>
       <li id="item-<%= item.id %>" class="list-group-item">
-        <%= item.name %>
         <%= link_to "", [item.list, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+        <%= item.name %>
+        <span class="pull-right">Days Remaining: <%= item.days_left %></span>
       </li> 
   <% end %>
 </ul> 
